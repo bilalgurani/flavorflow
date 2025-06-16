@@ -1,0 +1,37 @@
+<header class="header">
+  <nav class="main-nav">
+    <div class="main-nav__left">
+      <div class="logo">
+        <img class="logo" src="" alt="Flavorflow company logo">
+      </div>
+      <ul class="nav-link-list">
+        <li>
+          <a class="nav-link-list__item" [class.active]="activeFeature === 'recipe'" (click)="onSelect('recipe')" href="#">Recipes</a>
+        </li>
+        <li>
+          <a class="nav-link-list__item" [class.active]="activeFeature === 'shopping-list'" (click)="onSelect('shopping-list')" href="#">Shopping list</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main-nav__right">
+      <ul class="nav-link-list">
+        <li class="dropdown">
+          <a class="dropdown-head" href="#">
+            <span>Manage</span> 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="Caret-Down--Streamline-Font-Awesome" height="16" width="16">
+            <path d="M6.892520000000001 12.24469c0.612245 0.612245 1.6065300000000002 0.612245 2.2187750000000004 0l6.269385 -6.269385c0.45061 -0.45061 0.582855 -1.1216300000000001 0.33796000000000004 -1.7093850000000002s-0.81306 -0.9697950000000001 -1.449795 -0.9697950000000001l-12.53877 0.004895c-0.63184 0 -1.2049 0.382045 -1.449795 0.9698000000000001s-0.107755 1.258775 0.337955 1.7093850000000002l6.269385 6.269385Z" fill="#F8F9FA" stroke-width="0.05"></path>
+            </svg>
+          </a>
+          <ul class="manage-dropdown">
+            <li>
+              <a class="" href="#">Save data</a>
+            </li>
+            <li>
+              <a class="" href="#">Fetch data</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+
+.recipes {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.right {
+  // background-color: s  addlebrown;
+  display: flex;
+  // align-items: center;
+  margin-top: 6rem;
+  // box-shadow: $box-shadow;
+}

@@ -1,0 +1,66 @@
+@use "../../../../styles/variables" as *;
+.recipe-card {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 90%;
+  border-radius: $radius-4;
+  padding: 2rem;
+  color: $text-dark;
+  background-color: $background;
+  box-shadow: $box-shadow;
+  transition: all .2s ease-in-out;
+  &__img {
+    width: 40%;
+    background-size: cover;
+    background-position: top;
+    border-radius: $radius-4;
+    box-shadow: $box-shadow
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    &__name {
+      font-size: 4rem;
+    }
+    &__desc {
+      font-size:1.6rem;
+      line-height: 1.3;
+      color: $text-grey-6;
+    }
+    &__meta-data {
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.6rem;
+      text-transform: capitalize;
+      span:last-child {
+        font-size: 1.6rem;
+        color: $text-grey-6;
+      }
+      // $primary-orange: #F87D4D;  // Buttons, alerts, key actions
+      // $secondary-green: #88D286; // Success states, fresh ingredients
+      // $secondary-green-light: #D6E06B;  // Highlights, warnings, accents
+      
+      .difficulty {
+        padding: .6rem 1.2rem;
+        border-radius: $radius-4;
+      }
+      .medium {
+        background-color: $secondary-green-light;
+      }
+      .easy {
+        background-color: $secondary-green;
+      }
+      .hard {
+        background-color: $primary-orange;
+      }
+    }
+  }
+  &:hover {
+    transform: translateX(-5px);
+  }
+
+}

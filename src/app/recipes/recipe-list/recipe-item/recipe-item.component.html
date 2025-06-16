@@ -1,0 +1,11 @@
+<a href="#" class="recipe-card" (click)="onSelected()">
+  <img class="recipe-card__img" [src]="recipe.imageUrl" alt="">
+  <div class="recipe-card__text">
+    <h2 class="heading-secondary">{{ recipe.name }}</h2>
+    <p class="description">{{ recipe.description }}</p>
+    <div class="recipe-card__text__meta-data">
+      <span class="difficulty" [class]="recipe.difficulty">{{ recipe.difficulty }}</span>
+      <span class="cook-time">{{ recipe.time }} mins</span>
+    </div>
+  </div>
+</a>
