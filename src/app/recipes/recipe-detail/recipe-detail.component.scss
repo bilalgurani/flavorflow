@@ -1,7 +1,51 @@
+@use '../../../styles/variables' as *;
+
 .details {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
   align-items: start;
+  position: relative;
+}
+
+.btn-grp {
+  position: relative;
+}
+
+.dropdown-menu {
+  top: 5rem;
+  position: absolute;
+  padding: 1rem 2rem;
+  background: #fff;
+  color: $text-dark;
+  border-radius: $radius-4;
+  z-index: 999;
+  min-width: 20rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-1rem);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  li {
+    a {
+      display: block;
+      padding: 1.2rem 2rem;
+      color: $primary-dark;
+      font-size: 1.6rem;
+      font-weight: 500;
+      border-radius: $radius-4;
+      transition: all 0.2s ease;
+      position: relative;
+
+      &:hover {
+        background-color: $primary-dark;
+        color: $text-light;
+      }
+    }
+  }
+  .open & {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
