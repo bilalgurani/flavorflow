@@ -10,6 +10,7 @@ export class HeaderComponent {
   activeFeature: string = 'recipe';
   
   @Output() featureSelected = new EventEmitter<string>;
+
   onSelect(feature: string) {
     this.activeFeature = feature;
     this.featureSelected.emit(feature);
