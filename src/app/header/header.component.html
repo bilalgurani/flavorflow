@@ -6,10 +6,12 @@
       </div>
       <ul class="nav-link-list">
         <li>
-          <a class="nav-link-list__item" [class.active]="activeFeature === 'recipe'" (click)="onSelect('recipe')" href="#">Recipes</a>
+          <!-- <a class="nav-link-list__item" [class.active]="activeFeature === 'recipe'" (click)="onSelect('recipe')" href="#">Recipes</a> -->
+          <a class="nav-link-list__item" routerLink="/recipes" routerLinkActive="active">Recipes</a>
         </li>
         <li>
-          <a class="nav-link-list__item" [class.active]="activeFeature === 'shopping-list'" (click)="onSelect('shopping-list')" href="#">Shopping list</a>
+          <!-- <a class="nav-link-list__item" [class.active]="activeFeature === 'shopping-list'" (click)="onSelect('shopping-list')" href="#">Shopping list</a> -->
+          <a class="nav-link-list__item" routerLink="/shopping-list"  routerLinkActive="active">Shopping list</a>
         </li>
       </ul>
     </div>

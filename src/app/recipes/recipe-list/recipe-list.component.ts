@@ -8,7 +8,7 @@ import { RecipeService } from '../recipes.service';
   selector: 'app-recipe-list',
   imports: [RecipeItemComponent, CommonModule],
   templateUrl: './recipe-list.component.html',
-  styleUrl: './recipe-list.component.scss',
+  styleUrl: './recipe-list.component.scss'
 })
 export class RecipeListComponent implements OnInit {
   recipes!: Recipe[];

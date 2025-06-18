@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [HeaderComponent, RecipesComponent, ShoppingListComponent, CommonModule]
+  imports: [HeaderComponent, CommonModule, RouterOutlet]
 })
 export class AppComponent {
   loadedFeature = 'recipe';

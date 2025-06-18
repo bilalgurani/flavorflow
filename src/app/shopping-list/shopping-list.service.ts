@@ -15,14 +15,29 @@ export class ShoppingListService {
     }
 
     addIngredient(ingredient: Ingredient) {
-      this.ingredients.push(ingredient);
-      this.ingredientChanged.emit(this.ingredients.slice());
+      const existingIngredient = this.ingredients.find(
+        item => item.name.toLowerCase() === ingredient.name.toLowerCase()
+      )
+      if (existingIngredient) {
+        existingIngredient.amount += +ingredient.amount;
+      } else {
+        this.ingredients.push(ingredient);
+      }
+      this.ingredientChanged.emit([...this.ingredients]);
     }
 
     addIngredients(ingredients: Ingredient[]) {
-      this.ingredients.push(...ingredients);
-      console.log(this.ingredients);
-      
+      const ingredientsMap = new Map<string, number>();
+      this.ingredients.forEach(item => {
+        ingredientsMap.set(item.name, item.amount);
+      });
+      ingredients.forEach(item => {
+        const currAmount = ingredientsMap.get(item.name) || 0;
+        ingredientsMap.set(item.name, currAmount + +item.amount)
+      });
+      this.ingredients = Array.from(ingredientsMap.entries()).map(
+        ([name, amount]) => new Ingredient(name, amount)
+      );
       this.ingredientChanged.emit(this.ingredients.slice());
     }
 }
