@@ -101,6 +101,19 @@ p {
 .container {
   max-width: 120rem;
   margin: 6rem auto;
+  height: calc(100vh - 12rem);
+  overflow-y: auto;
+  
+  // Hide scrollbar for webkit browsers
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  // Hide scrollbar for Firefox
+  scrollbar-width: none;
+  
+  // For IE and Edge
+  -ms-overflow-style: none;
 }
 .btn {
   padding: 1rem 2rem;

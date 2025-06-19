@@ -1,5 +1,10 @@
 @use '../../styles/variables' as *;
-
+.shopping-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100dvh;
+}
 .shopping-list-group {
   font-size: 1.6rem;
   margin-top: 2rem;
@@ -10,6 +15,8 @@
   gap: 2rem;
   box-shadow: $box-shadow;
   padding: 2rem 4rem;
+  overflow-y: auto;
+  flex: 1;
   &__item {
     width: 60%;
     border: 1px solid $text-dark;

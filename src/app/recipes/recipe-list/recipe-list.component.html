@@ -5,6 +5,7 @@
     <app-recipe-item 
     *ngFor="let recipe of recipes;"
     [recipe]="recipe"
+    [isSelected]="selectedRecipe === recipe"
     ></app-recipe-item>
   </div>
 </div>

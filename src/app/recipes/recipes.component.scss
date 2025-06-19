@@ -5,12 +5,15 @@
   grid-template-columns: 2fr 1fr;
   justify-content: center;
   padding: 2rem;
+  min-height: 100vh;
+  position: relative;
+  align-items: start;
 }
 
 .right {
-  // background-color: s  addlebrown;
-  display: flex;
-  // align-items: center;
   margin-top: 6rem;
-  // box-shadow: $box-shadow;
+  position: sticky;
+  top: 10rem;
+  z-index: 10;
+  align-self: start;
 }

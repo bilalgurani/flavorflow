@@ -2,9 +2,12 @@
 
 .details {
   display: flex;
+  
+  box-shadow: $box-shadow;
+  border-radius: $radius-4;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem;
+  padding: 4rem;
   align-items: start;
   position: relative;
 }

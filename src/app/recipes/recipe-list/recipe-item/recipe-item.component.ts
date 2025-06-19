@@ -11,9 +11,15 @@ import { RecipeService } from '../../recipes.service';
 export class RecipeItemComponent {
 
   @Input() recipe! : Recipe;
+  @Input() isSelected!: Boolean;
   constructor(private recipeService: RecipeService) {}
 
   onSelected() {
-    this.recipeService.recipeSelected.emit(this.recipe); 
+    if (this.isSelected) {
+      this.recipeService.setRecipeSelected(null);
+    } else {
+      this.recipeService.setRecipeSelected(this.recipe);
+    }
+    // this.recipeService.recipeSelected.emit(this.recipe); 
   }
 }
