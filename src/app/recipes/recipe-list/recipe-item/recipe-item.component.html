@@ -1,5 +1,6 @@
-<a class="recipe-card" (click)="onSelected()" 
-[class.recipe-card--selected]="isSelected" >
+<a class="recipe-card" 
+[routerLink]="[index]" 
+routerLinkActive="recipe-card--selected">
   <img class="recipe-card__img" [src]="recipe.imageUrl" alt="">
   <div class="recipe-card__text">
     <h2 class="heading-secondary">{{ recipe.name }}</h2>

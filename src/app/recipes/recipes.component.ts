@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { RecipeListComponent } from "./recipe-list/recipe-list.component";
 import { RecipeDetailComponent } from "./recipe-detail/recipe-detail.component";
 import { Recipe } from './recipe.model';
 import { CommonModule } from '@angular/common';
 import { RecipeService } from './recipes.service';
+import { RecipeStartComponent } from "./recipe-start/recipe-start.component";
 
 @Component({
   selector: 'app-recipes',
-  imports: [RecipeListComponent, RecipeDetailComponent, CommonModule],
+  imports: [RecipeListComponent, RouterOutlet, CommonModule],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.scss',
   providers: [RecipeService]

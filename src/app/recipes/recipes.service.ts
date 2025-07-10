@@ -17,6 +17,10 @@ export class RecipeService {
   getSelectedRecipe() {
     return this.selectedRecipe;
   }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
   
   private recipes: Recipe[] = [
       new Recipe('Sushi', 

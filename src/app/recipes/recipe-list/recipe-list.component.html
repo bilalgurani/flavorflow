@@ -3,8 +3,9 @@
   <hr style="width: 90%;">
   <div class="recipe">
     <app-recipe-item 
-    *ngFor="let recipe of recipes;"
+    *ngFor="let recipe of recipes; let i = index"
     [recipe]="recipe"
+    [index]="i+1"
     [isSelected]="selectedRecipe === recipe"
     ></app-recipe-item>
   </div>
