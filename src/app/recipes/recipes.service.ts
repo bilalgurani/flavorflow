@@ -2,16 +2,14 @@ import { EventEmitter, Injectable, Output } from "@angular/core";
 import { Recipe } from "./recipe.model";
 import { Ingredient } from "../shared/ingredient.model";
 import { ShoppingListService } from "../shopping-list/shopping-list.service";
+import { Subject } from "rxjs";
 
 @Injectable()
 export class RecipeService {
   private selectedRecipe: Recipe | null = null;;
 
-  recipeSelected = new EventEmitter<Recipe | null>;
-
   setRecipeSelected(recipe: Recipe | null) {
     this.selectedRecipe = recipe;
-    this.recipeSelected.emit(recipe);
   }
 
   getSelectedRecipe() {

@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RecipeListComponent } from "./recipe-list/recipe-list.component";
-import { RecipeDetailComponent } from "./recipe-detail/recipe-detail.component";
 import { Recipe } from './recipe.model';
 import { CommonModule } from '@angular/common';
 import { RecipeService } from './recipes.service';
-import { RecipeStartComponent } from "./recipe-start/recipe-start.component";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-recipes',
@@ -14,15 +13,14 @@ import { RecipeStartComponent } from "./recipe-start/recipe-start.component";
   styleUrl: './recipes.component.scss',
   providers: [RecipeService]
 })
-export class RecipesComponent implements OnInit {
+export class RecipesComponent implements OnInit, OnDestroy {
+  private recipeServiceSubscription!: Subscription;
   selectedRecipe!: Recipe;
 
-  constructor(private recipeService: RecipeService) {}
+  ngOnInit() {
+  }
 
-  ngOnInit() {     
-    this.recipeService.recipeSelected
-    .subscribe((recipe: Recipe) => {      
-      this.selectedRecipe = recipe;
-    })
+  ngOnDestroy(): void {
+    this.recipeServiceSubscription.unsubscribe();
   }
 }
