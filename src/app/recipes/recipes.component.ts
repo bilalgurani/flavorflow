@@ -13,14 +13,10 @@ import { Subscription } from 'rxjs';
   styleUrl: './recipes.component.scss',
   providers: [RecipeService]
 })
-export class RecipesComponent implements OnInit, OnDestroy {
-  private recipeServiceSubscription!: Subscription;
+export class RecipesComponent implements OnInit {
   selectedRecipe!: Recipe;
 
   ngOnInit() {
   }
 
-  ngOnDestroy(): void {
-    this.recipeServiceSubscription.unsubscribe();
-  }
 }

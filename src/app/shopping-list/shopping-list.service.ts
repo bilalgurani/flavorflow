@@ -5,6 +5,8 @@ import { Subject } from "rxjs";
 @Injectable({ providedIn: 'root' }) 
 export class ShoppingListService {
   ingredientChanged = new Subject<Ingredient[]>();
+  startEditing = new Subject<number>;
+
     private ingredients: Ingredient[] = [
       new Ingredient("Tomato", 4),
       new Ingredient("Chicken", 1),
@@ -15,15 +17,17 @@ export class ShoppingListService {
       return this.ingredients.slice();
     }
 
+    getIngredient(index: number): Ingredient {
+      return this.ingredients[index];
+    }
+
+    updateIngredient(index: number, values: Ingredient) {      
+      this.ingredients[index] = values;
+      this.ingredientChanged.next([...this.ingredients]);
+    }
+
     addIngredient(ingredient: Ingredient) {
-      const existingIngredient = this.ingredients.find(
-        item => item.name.toLowerCase() === ingredient.name.toLowerCase()
-      )
-      if (existingIngredient) {
-        existingIngredient.amount += +ingredient.amount;
-      } else {
-        this.ingredients.push(ingredient);
-      }
+      this.ingredients.push(ingredient);
       this.ingredientChanged.next([...this.ingredients]);
     }
 
