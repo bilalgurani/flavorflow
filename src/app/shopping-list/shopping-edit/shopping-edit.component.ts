@@ -1,11 +1,12 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Ingredient } from '../../shared/ingredient.model';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ShoppingListService } from '../shopping-list.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-edit',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './shopping-edit.component.html',
   styleUrl: './shopping-edit.component.scss'
 })
@@ -19,7 +20,7 @@ export class ShoppingEditComponent implements OnInit {
   constructor(private shoppingListService: ShoppingListService) {}
 
   ngOnInit(): void {
-    this.shoppingListService.startEditing.subscribe(index => {
+    this.shoppingListService.startEditing.subscribe(index => {      
       this.editMode = true;
       this.editItemIndex = index;
       this.editItem = this.shoppingListService.getIngredient(index);
@@ -43,11 +44,13 @@ export class ShoppingEditComponent implements OnInit {
     this.addItemForm.reset();
   }
 
-  resetForm() {
+  onClear() {
     this.addItemForm.reset();
+    this.editMode = false;
   }
 
-  deleteItem() {
-
+  onDelete() {
+    this.onClear();
+    this.shoppingListService.deleteIngredient(this.editItemIndex);
   }
 }

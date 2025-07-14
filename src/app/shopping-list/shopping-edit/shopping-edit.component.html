@@ -12,8 +12,8 @@
     </div>
     <div class="shopping-edit__btn-grp">
       <button class="btn btn__green" [disabled]="f.invalid" type="submit">{{ editMode ? 'Update': 'Add'}}</button>
-      <button class="btn btn__red" type="button" (click)="deleteItem()">Delete</button>
-      <button class="btn btn__blue" type="button" (click)="resetForm()">Clear</button>
+      <button class="btn btn__red" type="button" *ngIf="editMode" (click)="onDelete()">Delete</button>
+      <button class="btn btn__blue" type="button" (click)="onClear()">Clear</button>
     </div>
   </form>
 </div>
