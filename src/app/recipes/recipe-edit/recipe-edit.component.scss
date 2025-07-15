@@ -1,0 +1,38 @@
+@use '../../../styles/variables' as *;
+.recipe-edit {
+// border: 1px solid;
+box-shadow: 0 2px 8px rgba(46, 53, 78, 0.08);
+
+}
+.form {
+  padding: 2rem 4rem;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.input {
+  font-size: inherit;
+  padding: .6rem 1.2rem;
+  outline: none;
+  border-radius: .4rem;
+  border: 1px solid $primary-dark;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+textarea {
+  resize: vertical;
+}
+.btn-grp {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-side {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
