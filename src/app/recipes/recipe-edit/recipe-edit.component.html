@@ -1,21 +1,24 @@
 <div class="recipe-edit">
-  <form class="form">
+  <form class="form" [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
     <div class="input-container">
-      <label class="input-label" for="name">Name</label>
-      <input class="input" type="text" id="name" name="name">
+      <label class="input-label" for="name" >Name</label>
+      <input class="input" type="text" id="name" formControlName="name">
     </div>
     <div class="input-container">
       <label class="input-label" for="image-url">Image URL</label>
-      <input class="input" type="text" id="image-url" name="imageUrl">
-    </div>
-    <div class="input-side">
-      <input class="input" type="text" name="">
-      <input class="input" type="text" name="">
-      <button class="btn btn__red" type="button">X</button>
+      <input class="input" type="text" id="image-url" name="imageUrl" formControlName="image-url">
     </div>
     <div class="input-container">
-      
+      <label class="input-label" for="description">Description</label>
+      <textarea rows="6" class="input" type="text" id="description" formControlName="description"></textarea>
     </div>
+    <!-- <div class="input-form-array" formArrayName="ingredients">
+      <div class="input-side" *ngFor="let ingredientCtrl of IngredientsControl; let i = index;" [formGroupName]="i">
+        <input class="input" type="text" formControlName="name">
+        <input class="input" type="text" formControlName="amount">
+        <button class="btn btn__red" type="button">X</button>
+      </div>
+    </div> -->
     <div class="btn-grp">
       <button class="btn btn__green" type="submit">Save</button>
       <button class="btn btn__red" type="button">Delete</button>
