@@ -19,8 +19,19 @@
           <button class="btn btn__red" type="button" (click)="onRemoveIngredient(i)">X</button>
       </div>
     </div>
+    <div class="input-container">
+      <label class="input-label" for="description">Difficulty</label>
+      <input class="input" type="text" formControlName="difficulty">
+    </div>
+    <div class="input-container">
+      <label class="input-label" for="description">Time to prepare</label>
+      <input class="input" type="number" formControlName="time">
+    </div>
+    <div class="input-form-array">
+      <button class="btn btn__green" type="button" (click)="onAddIngredient()">Add Ingredient</button>
+    </div>
     <div class="btn-grp">
-      <button class="btn btn__green" type="submit">Save</button>
+      <button class="btn btn__green" type="submit" [disabled]="recipeForm.invalid">Save</button>
       <button class="btn btn__red" type="button">Delete</button>
     </div>
   </form>

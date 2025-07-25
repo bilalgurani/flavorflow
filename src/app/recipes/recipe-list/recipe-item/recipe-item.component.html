@@ -6,7 +6,7 @@ routerLinkActive="recipe-card--selected">
     <h2 class="heading-secondary">{{ recipe.name }}</h2>
     <p class="description">{{ recipe.description }}</p>
     <div class="recipe-card__text__meta-data">
-      <span class="difficulty" [class]="recipe.difficulty">{{ recipe.difficulty }}</span>
+      <span class="difficulty" [class]="recipe.difficulty.toLowerCase()">{{ recipe.difficulty }}</span>
       <span class="cook-time">{{ recipe.time }} mins</span>
     </div>
   </div>
