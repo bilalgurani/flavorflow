@@ -14,7 +14,7 @@ interface IngredientForm {
   selector: 'app-recipe-edit',
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './recipe-edit.component.html',
-  styleUrl: './recipe-edit.component.scss'
+  styleUrls: ['./recipe-edit.component.scss']
 })
 export class RecipeEditComponent implements OnInit {
   id!: number;
@@ -42,6 +42,8 @@ export class RecipeEditComponent implements OnInit {
       recipeName = recipe.name;
       recipeUrl = recipe.imageUrl;
       recipeDescription = recipe.description;
+      console.log(recipe['ingredients']);
+      
       if (recipe['ingredients']) {
         for (let ingredient of recipe.ingredients) {
           recipeIngredients.push(
@@ -55,7 +57,7 @@ export class RecipeEditComponent implements OnInit {
     }
     this.recipeForm = new FormGroup({
       'name': new FormControl(recipeName),
-      'image-url': new FormControl(recipeUrl),
+      'imageUrl': new FormControl(recipeUrl),
       'description': new FormControl(recipeDescription),
       'ingredients': recipeIngredients
     });
@@ -68,5 +70,9 @@ export class RecipeEditComponent implements OnInit {
   onSubmit() {
     console.log(this.recipeForm);
     
+  }
+
+  onRemoveIngredient(index: number) {
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
   }
 }

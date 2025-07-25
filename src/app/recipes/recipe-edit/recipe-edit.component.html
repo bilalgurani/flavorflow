@@ -6,19 +6,19 @@
     </div>
     <div class="input-container">
       <label class="input-label" for="image-url">Image URL</label>
-      <input class="input" type="text" id="image-url" name="imageUrl" formControlName="image-url">
+      <input class="input" type="text" id="image-url" name="imageUrl" formControlName="imageUrl">
     </div>
     <div class="input-container">
       <label class="input-label" for="description">Description</label>
-      <textarea rows="6" class="input" type="text" id="description" formControlName="description"></textarea>
+      <textarea rows="6" class="input" id="description" formControlName="description"></textarea>
     </div>
-    <!-- <div class="input-form-array" formArrayName="ingredients">
-      <div class="input-side" *ngFor="let ingredientCtrl of IngredientsControl; let i = index;" [formGroupName]="i">
-        <input class="input" type="text" formControlName="name">
-        <input class="input" type="text" formControlName="amount">
-        <button class="btn btn__red" type="button">X</button>
+    <div class="input-form-array" formArrayName="ingredients">
+      <div class="input-side" *ngFor="let ig of IngredientsControl; let i = index" [formGroupName]="i">
+          <input class="input" type="text" formControlName="name">
+          <input class="input" type="text" formControlName="amount">
+          <button class="btn btn__red" type="button" (click)="onRemoveIngredient(i)">X</button>
       </div>
-    </div> -->
+    </div>
     <div class="btn-grp">
       <button class="btn btn__green" type="submit">Save</button>
       <button class="btn btn__red" type="button">Delete</button>
