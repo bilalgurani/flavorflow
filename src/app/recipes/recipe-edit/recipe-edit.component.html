@@ -6,7 +6,10 @@
     </div>
     <div class="input-container">
       <label class="input-label" for="image-url">Image URL</label>
-      <input class="input" type="text" id="image-url" name="imageUrl" formControlName="imageUrl">
+      <input class="input" type="text" id="image-url" name="imageUrl" formControlName="imageUrl" #imageUrl>
+    </div>
+    <div class="image-preview">
+      <img class="image-responive" [src]="imageUrl.value" alt="">
     </div>
     <div class="input-container">
       <label class="input-label" for="description">Description</label>
@@ -32,7 +35,7 @@
     </div>
     <div class="btn-grp">
       <button class="btn btn__green" type="submit" [disabled]="recipeForm.invalid">Save</button>
-      <button class="btn btn__red" type="button">Delete</button>
+      <button class="btn btn__red" type="button" (click)="onCancel()">Cancel</button>
     </div>
   </form>
 </div>

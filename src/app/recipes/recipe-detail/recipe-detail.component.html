@@ -10,7 +10,7 @@
     <ul class="dropdown-menu">
       <li><a (click)="toShoppingList(selectedRecipe)">To shopping list</a></li>
       <li><a (click)="toEditRecipe()">Edit recipe</a></li>
-      <li><a href="#">Delete recipe</a></li>
+      <li><a (click)="onDelete()">Delete recipe</a></li>
     </ul>
   </div>
   <p class="description">{{selectedRecipe.description}}</p>

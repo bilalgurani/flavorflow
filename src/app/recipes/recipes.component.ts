@@ -10,8 +10,7 @@ import { Subscription } from 'rxjs';
   selector: 'app-recipes',
   imports: [RecipeListComponent, RouterOutlet, CommonModule],
   templateUrl: './recipes.component.html',
-  styleUrl: './recipes.component.scss',
-  providers: [RecipeService]
+  styleUrl: './recipes.component.scss'
 })
 export class RecipesComponent implements OnInit {
   selectedRecipe!: Recipe;

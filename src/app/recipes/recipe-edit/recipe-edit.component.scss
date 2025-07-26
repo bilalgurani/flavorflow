@@ -41,3 +41,10 @@ input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
   border: 1px solid $primary-orange;
 }
+
+.image-preview {
+  box-shadow: 0 2px 8px rgba(46, 53, 78, 0.08);
+}
+.image-responive {
+  border-radius: .4rem;
+}
